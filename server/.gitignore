@@ -1,0 +1,4 @@
+# server-side specific exclusions
+node_modules/
+build/
+.env

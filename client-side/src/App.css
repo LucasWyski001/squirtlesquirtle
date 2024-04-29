@@ -1,0 +1,636 @@
+/* basic elements of the css for the web application */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+}
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+p, a, li, button, ul{
+  margin:0;
+  padding:0;
+  line-height: normal;
+  text-decoration: none !important;
+  list-style: none;
+}
+
+Link{
+  color: #ffffff;
+  font-weight: 900;
+}
+
+a:hover{
+  text-decoration: none;
+}
+img{
+  width:100%;
+  height:auto;
+}
+/* css right here is literally for the nav bar isnt that shit great */
+nav.navbar{
+  padding: 18px 0;
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+  background-color: #121212;
+}
+nav.navbar.scrolled{
+  padding: 0px 0;
+  background-color: #121212;
+}
+nav.navbar a.navbar-brand{
+  width:9%;
+}
+nav.navbar a.navbar-brand img{
+  border-radius: 50%;
+}
+nav.navbar .navbar-nav .nav-link.navbar-link{
+  font-weight: 400;
+  color:#f1f1f1 !important;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+}
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+    opacity: 1;
+}
+span.navbar-text {
+  display: flex;
+  align-items: center;
+}
+.social-icon{
+  display: inline-block;
+  margin-left: 14px;
+}
+/* this is setting and styling the images to have borders around them */
+.social-icon a{
+  width:42px;
+  height: 42px;
+  background: rgba(217,217,217, 0.1);
+  display: inline-flex;
+  border-radius: 50%;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255,255,255, 0.5);
+}
+.social-icon a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+/* this populates for when you hover pover the icons white appears filling in the circle */
+.social-icon a:hover::before{
+  transform: scale(1);
+}
+.social-icon a img{
+  width:40%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+/* this gives the icon the saturation so when you hover on the images it changes to black */
+.social-icon a:hover img {
+	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+/* this gives form the the button with the lets connect and the white slider to fit within the content */
+.navbar-text button {
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 18px 34px;
+  font-size: 18px;
+  margin-left: 18px;
+	position: relative;
+	background-color: transparent;
+	transition: 0.3s ease-in-out;
+}
+.navbar-text button span {
+  z-index: 1;
+}
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.navbar-text button:hover {
+  color: #121212;
+}
+.navbar-text button:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+	outline: none;
+    box-shadow: none;
+}
+nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  transition: all 300ms linear;
+  top: -2px;
+}
+nav.navbar .navbar-toggler-icon:focus {
+	border-bottom: 2px solid #fff;
+}
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+	width: 24px;
+	position: absolute;
+	height: 2px;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	content: '';
+	z-index: 2;
+	transition: all 300ms linear;
+}
+nav.navbar .navbar-toggler-icon:after{
+  top:8px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+	transform: rotate(45deg);
+	background-color: #fff;
+	height: 2px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	transform: translateY(8px) rotate(-45deg);
+	background-color: #fff;
+	height: 2px;
+}
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+	border-color: transparent;
+}
+
+/* map render requirements */
+.Map {
+  height: 80vh;
+  width: 100vw;
+}
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}
+
+
+/* bottom sheet css */
+:root {
+  --rsbs-handle-bg: #0a0a0a;
+  --rsbs-max-w: auto;
+  --rsbs-ml: env(safe-area-inset-left);
+  --rsbs-mr: env(safe-area-inset-right);
+  --rsbs-antigap-scale-y: 0;
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0);
+  --rsbs-bg: #f0f0f0;
+  --rsbs-backdrop-opacity: 1;
+  --rsbs-content-opacity: 1;
+  --rsbs-overlay-h: 0px;
+  --rsbs-overlay-rounded: 16px;
+}
+
+.sheetHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 10vh;
+  border: 1px solid white;
+}
+
+.sheetBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid white;
+}
+
+
+/* should be something in here to fix the bottom sheet */
+[data-rsbs-overlay] {
+  border-top-left-radius: var(--rsbs-overlay-rounded, 16px);
+  border-top-right-radius: var(--rsbs-overlay-rounded, 16px);
+  display: flex;
+  background: var(--rsbs-bg, #fff);
+  flex-direction: column;
+}
+
+[data-rsbs-overlay]:focus {
+  outline: none;
+}
+
+[data-rsbs-overlay],
+[data-rsbs-root]:after {
+  max-width: var(--rsbs-max-w, auto);
+  margin-left: var(--rsbs-ml, env(safe-area-inset-left));
+  margin-right: var(--rsbs-mr, env(safe-area-inset-right));
+}
+
+[data-rsbs-overlay],
+[data-rsbs-backdrop],
+[data-rsbs-root]:after {
+  z-index: 3;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: none;
+  touch-action: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+[data-rsbs-backdrop] {
+  top: 0;
+  bottom: 0;
+  background-color: var(--rsbs-backdrop-bg, rgba(0, 0, 0, 0.6));
+  will-change: opacity;
+  cursor: pointer;
+  opacity: 1;
+}
+
+[data-rsbs-is-dismissable="false"] [data-rsbs-backdrop] {
+  cursor: ns-resize;
+}
+
+[data-rsbs-root]:after {
+  content: "";
+  pointer-events: none;
+  background: var(--rsbs-bg, #fff);
+  height: 1px;
+  transform-origin: bottom;
+  transform: scale3d(1, var(--rsbs-antigap-scale-y, 0), 1);
+  will-change: transform;
+}
+
+[data-rsbs-footer],
+[data-rsbs-header] {
+  flex-shrink: 0;
+  cursor: ns-resize;
+}
+
+[data-rsbs-header] {
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 0 1px 0 rgba(46, 59, 66, 0.125);
+  z-index: 1;
+  padding-top: calc(20px + env(safe-area-inset-top));
+  padding-bottom: 8px;
+}
+[data-rsbs-header]:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 36px;
+  height: 4px;
+  top: calc(8px + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background-color: var(--rsbs-handle-bg, hsla(0, 0%, 0%, 0.14));
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  [data-rsbs-header]:before {
+    transform: translateX(-50%) scaleY(0.75);
+  }
+}
+[data-rsbs-has-header="false"] [data-rsbs-header] {
+  box-shadow: none;
+  padding-top: calc(12px + env(safe-area-inset-top));
+}
+
+[data-rsbs-scroll] {
+  flex-shrink: 1;
+  flex-grow: 1;
+  -webkit-tap-highlight-color: revert;
+  -webkit-touch-callout: revert;
+  -webkit-user-select: auto;
+  -ms-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  overflow: auto;
+  -ms-scroll-chaining: none;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+[data-rsbs-scroll]:focus {
+  outline: none;
+}
+
+[data-rsbs-has-footer="false"] [data-rsbs-content] {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+[data-rsbs-content] {
+  /* The overflow hidden is to ensure any margin on child nodes are included when the resize observer is measuring the height */
+  overflow-y: auto;
+}
+
+[data-rsbs-footer] {
+  box-shadow: 0 -1px 0 rgba(46, 59, 66, 0.125), 0 2px 0 var(--rsbs-bg, #fff);
+  overflow: hidden;
+  z-index: 1;
+}
+[data-rsbs-is-dismissable="true"] [data-rsbs-header] > *,
+[data-rsbs-is-dismissable="true"] [data-rsbs-scroll] > *,
+[data-rsbs-is-dismissable="true"] [data-rsbs-footer] > *,
+[data-rsbs-is-dismissable="false"][data-rsbs-state="opening"]
+  [data-rsbs-header]
+  > *,
+[data-rsbs-is-dismissable="false"][data-rsbs-state="closing"]
+  [data-rsbs-header]
+  > *,
+[data-rsbs-is-dismissable="false"][data-rsbs-state="opening"]
+  [data-rsbs-scroll]
+  > *,
+[data-rsbs-is-dismissable="false"][data-rsbs-state="closing"]
+  [data-rsbs-scroll]
+  > *,
+[data-rsbs-is-dismissable="false"][data-rsbs-state="opening"]
+  [data-rsbs-footer]
+  > *,
+[data-rsbs-is-dismissable="false"][data-rsbs-state="closing"]
+  [data-rsbs-footer]
+  > * {
+  opacity: 1;
+}
+
+[data-rsbs-is-dismissable="true"] [data-rsbs-backdrop],
+[data-rsbs-is-dismissable="false"][data-rsbs-state="opening"]
+  [data-rsbs-backdrop],
+[data-rsbs-is-dismissable="false"][data-rsbs-state="closing"]
+  [data-rsbs-backdrop] {
+  opacity: 1;
+}
+[data-rsbs-state="closed"],
+[data-rsbs-state="closing"] {
+  /* Allows interactions on the rest of the page before the close transition is finished */
+  pointer-events: none;
+}
+
+/* this css is for the loading screen */
+.containerbottle {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -1;
+}
+
+.water-bottle,
+.options-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .background-video {
+    object-fit: cover; 
+  }
+}
+
+
+.bottle-body {
+  width: 100px;
+  height: 250px;
+  background-color: #b0e0e6;
+  margin: 25px auto;
+  border-radius: 10px;
+  position: relative;
+}
+
+.water {
+  width: 100%;
+  height: 0;
+  background-color: #87CEEB;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  animation: fillWater 5s forwards;
+}
+
+.bottle-neck {
+  width: 60px;
+  height: 20px;
+  background-color: #b0e0e6;
+  margin: 0 auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottle-cap {
+  width: 25px;
+  height: 20px;
+  background-color: #b0e0e6;
+  border-radius: 20%;
+  position: absolute;
+  top: -39px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fill-level {
+  color: white;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+}
+
+.options-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  text-align: center; 
+}
+
+.option-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.option-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fillWater {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.options-box {
+  text-align: center;
+  width: 380px;
+  margin-top: 250px;
+}
+
+.option-link {
+  text-decoration: none;
+}
+
+.option-button {
+  display: block; 
+  width: 100%; 
+  margin: 10px 0; 
+  background-color: #007BFF; 
+  color: white;
+  font-size: 20px;
+  padding: 10px 0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.option-button:hover {
+  background-color: #0056b3; 
+}
+
+
+
+/* this css is for the webcam */
+.Cam {
+  text-align: center;
+  padding: 20px;
+}
+
+.webcam {
+  width: 100%; 
+  max-width: 100%; 
+}
+
+.capture-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.screenshot {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.social-icon {
+  margin-top: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .webcam {
+    max-width: 100%; 
+  }
+}
+
+
+
+
+
+
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
