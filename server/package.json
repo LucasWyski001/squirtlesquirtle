@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server/server.js",
     "seed": "node seeders/seed.js",
-    "dev": "nodemon server.js",
-    "build": "react-scripts build --output public"
+    "dev": "nodemon server.js"
+    // "build": "react-scripts build --output public"
   },
   "keywords": [],
   "author": "",
