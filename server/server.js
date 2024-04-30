@@ -16,6 +16,10 @@ const server = new ApolloServer({
 
 mongoose.connect('mongodb+srv://root:root@cluster0.1hdcug7.mongodb.net/Untitled2');
 
+app.get("/", (req,res) =>{
+  res.json("Hello");
+})
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
