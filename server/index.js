@@ -5,14 +5,26 @@ const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+const { METHODS } = require('http');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+// added app.use cors to see if this will fix the serverless function issue
+app.use(cors(
+  {
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+))
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
 });
+
+
 
 mongoose.connect('mongodb+srv://root:root@cluster0.1hdcug7.mongodb.net/Untitled2');
 
