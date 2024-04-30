@@ -14,6 +14,8 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
+mongoose.connect('mongodb+srv://root:root@cluster0.1hdcug7.mongodb.net/Untitled2');
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
