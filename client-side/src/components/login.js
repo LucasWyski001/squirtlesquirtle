@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../assets/img/Retro.png';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -58,9 +57,6 @@ export const Login = (props) => {
               ) : (
                 <Card.Body>
                   <div className="mb-3 mt-md-4">
-                    <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                      <img src={logo} alt="Logo" />
-                    </h2>
                     <div className="mb-3">
                       <Form onSubmit={handleFormSubmit}>
                         <Form.Group className="mb-3" controlId="Name">
@@ -75,7 +71,6 @@ export const Login = (props) => {
                           <Form.Label>Password</Form.Label>
                           <Form.Control type="password" placeholder="Password" name="password" value={formState.password} onChange={handleChange} />
                         </Form.Group>
-
 
                         <Form.Group
                           className="mb-3"

@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import{Navbar, Nav, Container} from "react-bootstrap";
 import logo from '../assets/img/Retro.png';
-import {Cam} from './cam.js'
+// if ever we input a came js this would be the code for it: import {Cam} from './cam.js'
 import Auth from '../utils/auth'
 import snappic from '../assets/img/icons8-plus-64.svg';
 
@@ -33,7 +33,7 @@ export const NavBar = () =>{
         <Container>
           <Navbar.Brand href="#home">
             {/* this is where a potential logo will go for future reference when we find something cool */}
-            <a href="/home"> 
+            <a href="#"> 
             <img src={logo} alt="Logo"/> 
             </a>
           </Navbar.Brand>
@@ -45,7 +45,7 @@ export const NavBar = () =>{
               
               {Auth.loggedIn() ? (<>
                 <Nav.Link href="/home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={()=> onUpdateActiveLink('home')}>Home</Nav.Link>
-                <Nav.Link href="#"className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={()=> onUpdateActiveLink('save new location')}>Save new location</Nav.Link>
+                {/* <Nav.Link href="#"className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={()=> onUpdateActiveLink('save new location')}>Save new location</Nav.Link> */}
                 <Nav.Link href="/"className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={()=> Auth.logout()}>Log Out</Nav.Link>
                 <span className="navbar-text">
                     <div className="social-icon">

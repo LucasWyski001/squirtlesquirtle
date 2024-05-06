@@ -3,7 +3,6 @@ import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-import logo from '../assets/img/Retro.png';
 import Auth from '../utils/auth';
 
 
@@ -52,9 +51,6 @@ export const Signup = () => {
               ) : (
               <Card.Body>
                 <div className="mb-3 mt-md-4">
-                  <h2 className="fw-bold mb-2 text-center text-uppercase ">
-                    <img src={logo} alt="Logo"/>
-                  </h2>
                   <div className="mb-3">
                     <Form onSubmit={handleSubmit}>
                       <Form.Group className="mb-3" controlId="Name">

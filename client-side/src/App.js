@@ -18,8 +18,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './components/login';
 import {Signup} from './components/signup';
-import {Cam} from './components/cam';
-import Webcam from 'react-webcam';
+// import {Cam} from './components/cam';
+// import Webcam from 'react-webcam';
 import {WaterBottle} from './components/loading';
 
 
@@ -70,10 +70,10 @@ function App() {
               path = "/home"
               element = {<Home />}
             />
-            <Route
+            {/* <Route
             path='/cam'
             element = {<Cam/>}
-            />            
+            />             */}
           </Routes>
         </div>
       </Router>
