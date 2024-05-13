@@ -2,48 +2,39 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+// Reusable options for String fields
+const stringOptions = {
+  type: String,
+  trim: true,
+};
+
+// Define the schema
 const fountainSchema = new Schema({
-  lat: {
-    type: String,
-    trim: true,
-  },
-  lng: {
-    type: String,
-    trim: true,
-  },
+  lat: stringOptions,
+  lng: stringOptions,
   address: {
-    type: String,
+    ...stringOptions,
     required: true,
-    trim: true,
   },
-  place: {
-    type: String,
-    trim: true,
-  },
+  place: stringOptions,
   city: {
-    type: String,
+    ...stringOptions,
     required: true,
-    trim: true,
   },
   state: {
-    type: String,
+    ...stringOptions,
     required: true,
-    trim: true,
   },
   datePosted: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   image: {
     data: Buffer,
     contentType: String,
-    type: String
-  },
-  // added postAuthor to link with context user when adding a fountain
-  postAuthor: {
     type: String,
-    trim: true,
-  }
+  },
+  postAuthor: stringOptions,
 });
 
 const Fountain = mongoose.model('Fountain', fountainSchema);
