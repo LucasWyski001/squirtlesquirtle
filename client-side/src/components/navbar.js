@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import{Navbar, Nav, Container} from "react-bootstrap";
-import logo from '../assets/img/Retro.png';
+import logo from '../assets/img/newlogo.jpg';
 // if ever we input a came js this would be the code for it: import {Cam} from './cam.js'
 import Auth from '../utils/auth'
 import snappic from '../assets/img/icons8-plus-64.svg';
